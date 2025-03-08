@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+class Mobil {
+    private String noPlat;
+    private String warna;
+    private String manufaktur;
+    private int kecepatan;
+    private double waktu;
+
+    public void setNoPlat(String s) {
+        noPlat = s;
+    }
+    public void setWarna(String s) {
+        warna = s;
+    }
+    public void setManufaktur(String s) {
+        manufaktur = s;
+    }
+    private double rubahKecepatan(int kmh) {
+        return kmh * 1000.0 / 3600.0;
+    }
+    public void setKecepatan(int i) {
+        kecepatan = i;
+        System.out.println("Kecepatan dalam m/s: " + rubahKecepatan(i));
+    }
+    private double rubahSekon(double jam) {
+        return jam * 3600;
+    }
+    public void setWaktu(double w) {
+        waktu = w;
+        System.out.println("Waktu dalam sekon: " + rubahSekon(w));
+    }
+    public double hitungJarak() {
+        return (kecepatan * waktu);
+    }
+    public void displayMessage(){
+        System.out.println("Mobil anda adalah bermerek " + manufaktur);
+        System.out.println("Mempunyai nomor plat " + noPlat);
+        System.out.println("Serta memiliki warna " + warna);
+        System.out.println("Dan mampu menempuh kecepatan " + kecepatan + " km/jam");
+        System.out.println("Waktu tempuh: " + waktu + " jam");
+        System.out.println("Jarak yang dapat ditempuh: " + hitungJarak() + " km");
+    }
+}
+
+public class MainMobil {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Mobil m1 = new Mobil();
+
+        System.out.print("Masukkan manufaktur mobil: ");
+        m1.setManufaktur(scanner.nextLine());
+
+        System.out.print("Masukkan nomor plat: ");
+        m1.setNoPlat(scanner.nextLine());
+
+        System.out.print("Masukkan warna mobil: ");
+        m1.setWarna(scanner.nextLine());
+
+        System.out.print("Masukkan kecepatan mobil (km/jam): ");
+        m1.setKecepatan(scanner.nextInt());
+
+        System.out.print("Masukkan waktu tempuh (jam): ");
+        m1.setWaktu(scanner.nextDouble());
+
+        m1.displayMessage();
+        scanner.close();
+    }
+}
