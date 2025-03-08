@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+class Mobil {
+    private int kecepatan;
+    private String manufaktur;
+    private String noPlat;
+    private String warna;
+
+    public void setKecepatan(int kecepatan) {
+        this.kecepatan = kecepatan;
+    }
+
+    public void setManufaktur(String manufaktur) {
+        this.manufaktur = manufaktur;
+    }
+
+    public void setNoPlat(String noPlat) {
+        this.noPlat = noPlat;
+    }
+
+    public void setWarna(String warna) {
+        this.warna = warna;
+    }
+
+    public void displayMessage() {
+        System.out.println("Manufaktur: " + manufaktur);
+        System.out.println("Nomor Plat: " + noPlat);
+        System.out.println("Warna: " + warna);
+        System.out.println("Kecepatan: " + kecepatan + " km/jam");
+    }
+}
+
+public class MainMobil {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Mobil m1 = new Mobil();
+        
+        System.out.println("Masukkan data Mobil 1");
+        System.out.print("Manufaktur: ");
+        m1.setManufaktur(scanner.nextLine());
+        System.out.print("Nomor Plat: ");
+        m1.setNoPlat(scanner.nextLine());
+        System.out.print("Warna: ");
+        m1.setWarna(scanner.nextLine());
+        System.out.print("Kecepatan: ");
+        m1.setKecepatan(scanner.nextInt());
+        scanner.nextLine();
+        
+        System.out.println("=========");
+        m1.displayMessage();
+        System.out.println("=========");
+        
+        Mobil m2 = new Mobil();
+        
+        System.out.println("Masukkan data Mobil 2");
+        System.out.print("Manufaktur: ");
+        m2.setManufaktur(scanner.nextLine());
+        System.out.print("Nomor Plat: ");
+        m2.setNoPlat(scanner.nextLine());
+        System.out.print("Warna: ");
+        m2.setWarna(scanner.nextLine());
+        System.out.print("Kecepatan: ");
+        m2.setKecepatan(scanner.nextInt());
+        scanner.nextLine();
+        
+        System.out.println("=========");
+        m2.displayMessage();
+        System.out.println("=========");
+        
+        scanner.close();
+    }
+}
