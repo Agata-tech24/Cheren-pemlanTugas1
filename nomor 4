@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class MainMobil {
+    private int kecepatan;
+    private String manufaktur;
+    private String noPlat;
+    private String warna;
+    private double waktu; 
+
+    public void setKecepatan(int kecepatan) {
+        this.kecepatan = kecepatan;
+    }
+
+    public void setManufaktur(String manufaktur) {
+        this.manufaktur = manufaktur;
+    }
+
+    public void setNoPlat(String noPlat) {
+        this.noPlat = noPlat;
+    }
+
+    public void setWarna(String warna) {
+        this.warna = warna;
+    }
+    
+    public void setWaktu(double waktu) {
+        this.waktu = waktu;
+    }
+
+    
+    public void displayMessage() {
+        System.out.println("Manufaktur: " + manufaktur);
+        System.out.println("Nomor Plat: " + noPlat);
+        System.out.println("Warna: " + warna);
+        System.out.println("Kecepatan: " + kecepatan + " km/jam");
+        System.out.println("Waktu Tempuh: " + waktu + " jam");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        MainMobil m1 = new MainMobil();
+        
+        System.out.print("Masukkan kecepatan mobil 1: ");
+        m1.setKecepatan(scanner.nextInt());
+        scanner.nextLine(); 
+        System.out.print("Masukkan manufaktur mobil 1: ");
+        m1.setManufaktur(scanner.nextLine());
+        System.out.print("Masukkan nomor plat mobil 1: ");
+        m1.setNoPlat(scanner.nextLine());
+        System.out.print("Masukkan warna mobil 1: ");
+        m1.setWarna(scanner.nextLine());
+        System.out.print("Masukkan waktu tempuh mobil 1 (jam): ");
+        m1.setWaktu(scanner.nextDouble());
+        System.out.println("=========");
+        m1.displayMessage();
+        System.out.println("=========");
+
+        scanner.nextLine(); 
+        MainMobil m2 = new MainMobil();
+        System.out.print("Masukkan kecepatan mobil 2: ");
+        m2.setKecepatan(scanner.nextInt());
+        scanner.nextLine(); 
+        System.out.print("Masukkan manufaktur mobil 2: ");
+        m2.setManufaktur(scanner.nextLine());
+        System.out.print("Masukkan nomor plat mobil 2: ");
+        m2.setNoPlat(scanner.nextLine());
+        System.out.print("Masukkan warna mobil 2: ");
+        m2.setWarna(scanner.nextLine());
+        System.out.print("Masukkan waktu tempuh mobil 2 (jam): ");
+        m2.setWaktu(scanner.nextDouble());
+        System.out.println("==========");
+        m2.displayMessage();
+        System.out.println("==========");
+
+        System.out.println("Mobil pada objek m1 diubah menjadi warna hijau");
+        m1.setWarna("Hijau");
+        m1.displayMessage();
+        
+        scanner.close();
+    }
+}
